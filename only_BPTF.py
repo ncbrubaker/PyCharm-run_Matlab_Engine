@@ -17,18 +17,18 @@ eng = matlab.engine.start_matlab()
 # Set Variables in Python
 tte = 'TTe.mat';
 ttr = 'TTr.mat';
-D = 30;
-alpha = 2;
+D = 30.0;
+alpha = 2.0;
 
 hyper_param= {};
 hyper_param["Walpha"] = alpha;
-hyper_param["nuAlpha"] = 1;
+hyper_param["nuAlpha"] = 1.0;
 
 pn = 50e-3;
 max_iter = 300;
 learn_rate = 1e-3;
 n_sample = 50;
-range = matlab.double([1, 5])
+range = matlab.double([1, 5]);
 
 rates = {};
 rates["ridge"] = pn;
