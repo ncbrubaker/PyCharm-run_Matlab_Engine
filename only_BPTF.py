@@ -50,7 +50,7 @@ samples["run_name"] = 'alpha2-1';
 #    {U,V,ones(D,TTr.size(3))}, struct('max_iter',n_sample,'n_sample',n_sample,'save_sample',false,'run_name','alpha2-1'));
 
 bptf = eng.call_BPTF(ttr, tte, D, hyper_param, rates, samples, nargout=4)
-print(bptf)
+print(bptf[3])
 
 # a = eng.workspace['a'] # get the variable 'a' from the workspace
 # print(a)

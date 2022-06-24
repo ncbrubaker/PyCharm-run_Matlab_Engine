@@ -1,4 +1,4 @@
-function [Us_bptf Vs_bptf Ts_bptf r_bptf] = call_BPTF(R, E, D, hyper_params, pmf_options, options)
+function [Us_bptf, Vs_bptf, Ts_bptf, r_bptf] = call_BPTF(R, E, D, hyper_params, pmf_options, options)
 
 cd ./lib
 build;
