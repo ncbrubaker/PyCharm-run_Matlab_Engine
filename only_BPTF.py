@@ -15,14 +15,14 @@ eng = matlab.engine.start_matlab()
 # eng.demo(nargout=0)
 
 # Set Variables in Python
-tte = sio.loadmat('TTe.mat');
-ttr = sio.loadmat('TTr.mat');
+tte = 'TTe.mat';
+ttr = 'TTr.mat';
 D = 30;
 alpha = 2;
 
-wal= {};
-wal["Walpha"] = alpha;
-wal["nuAlpha"] = 1;
+hyper_param= {};
+hyper_param["Walpha"] = alpha;
+hyper_param["nuAlpha"] = 1;
 
 pn = 50e-3;
 max_iter = 300;
@@ -49,7 +49,7 @@ samples["run_name"] = 'alpha2-1';
 #[Us_bptf Vs_bptf Ts_bptf] = BPTF(TTr, TTe, D, struct('Walpha',alpha, 'nuAlpha',1), ...
 #    {U,V,ones(D,TTr.size(3))}, struct('max_iter',n_sample,'n_sample',n_sample,'save_sample',false,'run_name','alpha2-1'));
 
-bptf = eng.call_BPTF(ttr, tte, D, wal, rates, samples, nargout=4)
+bptf = eng.call_BPTF(ttr, tte, D, hyper_param, rates, samples, nargout=4)
 print(bptf)
 
 # a = eng.workspace['a'] # get the variable 'a' from the workspace
