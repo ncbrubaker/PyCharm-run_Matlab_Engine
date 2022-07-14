@@ -49,8 +49,14 @@ samples["run_name"] = 'alpha2-1';
 #[Us_bptf Vs_bptf Ts_bptf] = BPTF(TTr, TTe, D, struct('Walpha',alpha, 'nuAlpha',1), ...
 #    {U,V,ones(D,TTr.size(3))}, struct('max_iter',n_sample,'n_sample',n_sample,'save_sample',false,'run_name','alpha2-1'));
 
-bptf = eng.call_BPTF(ttr, tte, D, hyper_param, rates, samples, nargout=4)
-print(bptf[3])
+# Call only BPTF. Print the result of the call.
+# bptf = eng.call_BPTF(ttr, tte, D, hyper_param, rates, samples, nargout=4)
+# print(bptf[3])
+
+# Find format of existing mat files
+mat_contents = sio.loadmat('TTr.mat')
+print(sorted(mat_contents.keys()))
+print(mat_contents['TTr'])
 
 # a = eng.workspace['a'] # get the variable 'a' from the workspace
 # print(a)
